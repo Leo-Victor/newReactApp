@@ -1,0 +1,127 @@
+.calc-page {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e1e2e;
+    padding: 1rem;
+}
+
+.calculator {
+    background: #181825;
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.calc-title {
+    color: #cba6f7;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 0 1rem;
+    font-weight: 600;
+}
+
+.calc-display {
+    background: #11111b;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.calc-expression {
+    font-size: 0.85rem;
+    color: #6c7086;
+    margin-bottom: 4px;
+    min-height: 20px;
+}
+
+.calc-number {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #cdd6f4;
+    word-break: break-all;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-weight: 500;
+}
+
+.btn:active {
+    transform: scale(0.93);
+}
+
+.btn-number {
+    background: #313244;
+    color: #cdd6f4;
+}
+
+.btn-number:hover {
+    background: #45475a;
+}
+
+.btn-operator {
+    background: #fab387;
+    color: #1e1e2e;
+}
+
+.btn-operator:hover {
+    background: #fe8019;
+}
+
+.btn-clear {
+    background: #f38ba8;
+    color: #1e1e2e;
+}
+
+.btn-clear:hover {
+    background: #e06c75;
+}
+
+.btn-equal {
+    background: #a6e3a1;
+    color: #1e1e2e;
+}
+
+.btn-equal:hover {
+    background: #98c379;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 1rem;
+    }
+
+    .btn {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .calc-number {
+        font-size: 1.8rem;
+    }
+}
