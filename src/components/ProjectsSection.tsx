@@ -1,39 +1,10 @@
-import { useState, useEffect } from 'react';
-
-interface Project {
-    id: number;
-    name: string;
-    description: string | null;
-    html_url: string;
-    language: string | null;
-    stargazers_count: number;
-}
+import useFetchProjects from '../hooks/useFetchProjects';
+import LoadingState from './LoadingState';
+import ErrorState from './ErrorState';
 
 function ProjectsSection() {
-    const [projects, setProjects] = useState<Project[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                setLoading(true);
-                const response = await fetch(
-                    // ✅ Đổi thành repo của Leo-Victor
-                    // Đổi facebook thành Leo-Victor
-                    'https://api.github.com/users/Leo-Victor/repos?per_page=6&sort=updated'
-                );
-                if (!response.ok) throw new Error('Không thể tải dữ liệu');
-                const data: Project[] = await response.json();
-                setProjects(data);
-            } catch (err) {
-                setError('Có lỗi xảy ra khi tải dữ liệu');
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchProjects();
-    }, []);
+    //const username = 'Leo-Victor';
+    const { projects, loading, error } = useFetchProjects();
 
     return (
         <section className="projects" id="projects">
@@ -41,22 +12,12 @@ function ProjectsSection() {
                 <h2 className="section-title">Dự án nổi bật</h2>
                 <p className="section-subtitle">Dữ liệu được lấy từ GitHub API</p>
 
-                {loading && (
-                    <div className="state-box">
-                        <div className="spinner"></div>
-                        <p>Đang tải dữ liệu...</p>
-                    </div>
-                )}
-
-                {error && (
-                    <div className="state-box error">
-                        <p>⚠️ {error}</p>
-                    </div>
-                )}
+                {loading && <LoadingState message="Đang tải dự án..." />}
+                {error && <ErrorState message={error} />}
 
                 {!loading && !error && (
                     <div className="projects-grid">
-                        {projects.map((project: Project) => (
+                        {projects.map((project) => (
                             <a
                                 key={project.id}
                                 href={project.html_url}
