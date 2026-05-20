@@ -3,9 +3,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-    height: 60px;
-    background: #1e1e2e;
-    color: white;
+    height: 64px;
+    background: #FAF9F6;
+    border-bottom: 1px solid #DDD9CE;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -14,7 +14,7 @@
 .navbar-brand {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #cba6f7;
+    color: #2C2C2A;
 }
 
 .navbar-menu {
@@ -25,23 +25,28 @@
     padding: 0;
 }
 
-.navbar-menu a{
-    color: #cdd6f4;
+.navbar-menu a {
+    color: #6B6A65;
     text-decoration: none;
     font-size: 0.95rem;
+    font-weight: 500;
     padding: 4px 0;
     border-bottom: 2px solid transparent;
     transition: all 0.2s;
 }
 
-.navbar-menu a:hover 
+.navbar-menu a:hover,
 .navbar-menu a.active {
-    color: #cba6f7;
-    border-bottom-color: #cba6f7;
+    color: #8C7863;
+    border-bottom-color: #8C7863;
 }
 
-/*z Reponsive mobile */
 @media (max-width: 600px) {
-    .navbar {padding: 0 1rem;}
-    .navbar-menu {gap: 1rem;}
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .navbar-menu {
+        gap: 1rem;
+    }
 }

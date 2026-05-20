@@ -19,7 +19,9 @@ function ProjectsSection() {
             try {
                 setLoading(true);
                 const response = await fetch(
-                    'https://api.github.com/users/facebook/repos?per_page=6&sort=stars'
+                    // ✅ Đổi thành repo của Leo-Victor
+                    // Đổi facebook thành Leo-Victor
+                    'https://api.github.com/users/Leo-Victor/repos?per_page=6&sort=updated'
                 );
                 if (!response.ok) throw new Error('Không thể tải dữ liệu');
                 const data: Project[] = await response.json();

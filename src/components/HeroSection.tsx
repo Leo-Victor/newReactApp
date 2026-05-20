@@ -21,8 +21,20 @@ function HeroSection() {
                 <h2 className="hero-title">{role}</h2>
                 <p className="hero-desc">{description}</p>
                 <div className="hero-buttons">
-                    <a href="#projects" className="btn-primary">Xem lại dự án</a>
-                    <a href="#contact" className="btn-secondary">Liên hệ</a>
+
+                    <button
+                        className="btn-primary"
+                        onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                        Xem dự án
+                    </button>
+
+                    <button
+                        className="btn-secondary"
+                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                        Liên hệ
+                    </button>
                 </div>
             </div>
         </section>

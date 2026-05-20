@@ -12,7 +12,6 @@ function Calculator() {
 
     // Bấm số
     const handleNumber = (num: string) => {
-        //setWaitingForSecond((currentWaiting) => {
         // currentWaiting = giá trị THẬT của waitingForSecond lúc này
         if (waitingForSecond) {
             // Đang chờ số 2 → ghi đè display bằng số mới
@@ -20,9 +19,7 @@ function Calculator() {
             setWaitingForSecond(false);
         } else {
             // Chưa bấm phép tính → nối số vào display
-            setDisplay((currentDisplay) =>
-                currentDisplay === '0' ? num : currentDisplay + num
-            );
+            setDisplay(display === '0' ? num : display + num);
             //return false;
         }
         //};
@@ -46,15 +43,32 @@ function Calculator() {
     const handleEqual = () => {
         if (firstNum === null || operator === null) return;
 
-        //setDisplay((currentDisplay) => {
+
         // currentDisplay = số thứ 2 THẬT SỰ đang hiển thị
         const second = parseFloat(display);
         let result = 0;
 
-        if (operator === '+') result = firstNum + second;
-        if (operator === '-') result = firstNum - second;
-        if (operator === '*') result = firstNum * second;
-        if (operator === '/') result = second !== 0 ? firstNum / second : 0;
+        // if (operator === '+') result = firstNum + second;
+        // if (operator === '-') result = firstNum - second;
+        // if (operator === '*') result = firstNum * second;
+        // if (operator === '/') result = second !== 0 ? firstNum / second : 0;
+
+        switch (operator) {
+            case '+':
+                result = firstNum + second;
+                break;
+            case '-':
+                result = firstNum - second;
+                break;
+            case '*':
+                result = firstNum * second;
+                break;
+            case '/':
+                result = result = second !== 0 ? firstNum / second : 0;
+                break;
+            default:
+                break;
+        }
 
         //return String(result); // cập nhật display = kết quả
         //});
