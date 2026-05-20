@@ -36,5 +36,10 @@ npm run dev
 # Build production
 npm run build
 
+# Deploy lên GitHub Pages
+npm run deploy
+```
+
+
 ## 📝 Biến môi trường
 Tạo file `.env` ở thư mục gốc: VITE_GITHUB_USERNAME=your_github_username
