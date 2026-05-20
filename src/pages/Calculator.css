@@ -1,23 +1,24 @@
 .calc-page {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 64px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #1e1e2e;
+    background: linear-gradient(135deg, #F0EEE9 0%, #E5EAEF 100%);
     padding: 1rem;
 }
 
 .calculator {
-    background: #181825;
-    border-radius: 20px;
+    background: #FAF9F6;
+    border-radius: 24px;
     padding: 1.5rem;
     width: 100%;
     max-width: 340px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 60px rgba(44, 44, 42, 0.12);
+    border: 1px solid #DDD9CE;
 }
 
 .calc-title {
-    color: #cba6f7;
+    color: #8C7863;
     text-align: center;
     font-size: 1rem;
     margin: 0 0 1rem;
@@ -25,7 +26,7 @@
 }
 
 .calc-display {
-    background: #11111b;
+    background: #2B2A26;
     border-radius: 12px;
     padding: 1rem 1.2rem;
     margin-bottom: 1rem;
@@ -38,7 +39,7 @@
 
 .calc-expression {
     font-size: 0.85rem;
-    color: #6c7086;
+    color: #6B6A65;
     margin-bottom: 4px;
     min-height: 20px;
 }
@@ -46,7 +47,7 @@
 .calc-number {
     font-size: 2.2rem;
     font-weight: 300;
-    color: #cdd6f4;
+    color: #FAF9F6;
     word-break: break-all;
 }
 
@@ -64,6 +65,7 @@
     cursor: pointer;
     transition: all 0.15s;
     font-weight: 500;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .btn:active {
@@ -71,39 +73,169 @@
 }
 
 .btn-number {
-    background: #313244;
-    color: #cdd6f4;
+    background: #E8E5DC;
+    color: #2C2C2A;
 }
 
 .btn-number:hover {
-    background: #45475a;
+    background: #DDD9CE;
 }
 
 .btn-operator {
-    background: #fab387;
-    color: #1e1e2e;
+    background: #8C7863;
+    color: #FAF9F6;
 }
 
 .btn-operator:hover {
-    background: #fe8019;
+    background: #7a6854;
 }
 
 .btn-clear {
-    background: #f38ba8;
-    color: #1e1e2e;
+    background: #4A6B82;
+    color: #FAF9F6;
 }
 
 .btn-clear:hover {
-    background: #e06c75;
+    background: #3d5a6e;
 }
 
 .btn-equal {
-    background: #a6e3a1;
-    color: #1e1e2e;
+    background: #2C2C2A;
+    color: #FAF9F6;
 }
 
 .btn-equal:hover {
-    background: #98c379;
+    background: #3D3B36;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 1rem;
+    }
+
+    .btn {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .calc-number {
+        font-size: 1.8rem;
+    }
+}
+
+.calc-page {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #F0EEE9 0%, #E5EAEF 100%);
+    padding: 1rem;
+}
+
+.calculator {
+    background: #FAF9F6;
+    border-radius: 24px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 340px;
+    box-shadow: 0 20px 60px rgba(44, 44, 42, 0.12);
+    border: 1px solid #DDD9CE;
+}
+
+.calc-title {
+    color: #8C7863;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0 0 1rem;
+    font-weight: 600;
+}
+
+.calc-display {
+    background: #2B2A26;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.calc-expression {
+    font-size: 0.85rem;
+    color: #6B6A65;
+    margin-bottom: 4px;
+    min-height: 20px;
+}
+
+.calc-number {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #FAF9F6;
+    word-break: break-all;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-weight: 500;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.btn:active {
+    transform: scale(0.93);
+}
+
+.btn-number {
+    background: #E8E5DC;
+    color: #2C2C2A;
+}
+
+.btn-number:hover {
+    background: #DDD9CE;
+}
+
+.btn-operator {
+    background: #8C7863;
+    color: #FAF9F6;
+}
+
+.btn-operator:hover {
+    background: #7a6854;
+}
+
+.btn-clear {
+    background: #4A6B82;
+    color: #FAF9F6;
+}
+
+.btn-clear:hover {
+    background: #3d5a6e;
+}
+
+.btn-equal {
+    background: #2C2C2A;
+    color: #FAF9F6;
+}
+
+.btn-equal:hover {
+    background: #3D3B36;
 }
 
 .span-two {
