@@ -6,6 +6,298 @@
 
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
-    background: #F0EEE9;
-    color: #2C2C2A;
+    /*background: #f0eee9;*/
+    color: #2c2c2a;
+}
+
+/* ===== DARK MODE ĐỒNG BỘ ===== */
+body.dark {
+    background: #1a1a2e;
+    color: #e0e0e0;
+}
+
+/* Navbar */
+body.dark .navbar {
+    background: #16213e !important;
+    border-bottom-color: #0f3460 !important;
+}
+
+body.dark .navbar-brand {
+    color: #e0e0e0 !important;
+}
+
+body.dark .navbar-menu a {
+    color: #a0a0c0 !important;
+}
+
+body.dark .navbar-menu a:hover,
+body.dark .navbar-menu a.active {
+    color: #a78bfa !important;
+    border-bottom-color: #a78bfa !important;
+}
+
+body.dark .theme-toggle {
+    border-color: #a78bfa !important;
+    color: #a78bfa !important;
+}
+
+/* Hero */
+body.dark .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+}
+
+body.dark .hero-name {
+    color: #e0e0e0 !important;
+}
+
+body.dark .hero-desc {
+    color: #a0a0c0 !important;
+}
+
+body.dark .hero-role {
+    color: #a78bfa !important;
+}
+
+body.dark .hero-title {
+    color: #818cf8 !important;
+}
+
+/* About */
+body.dark .about {
+    background: #16213e !important;
+}
+
+body.dark .about-card {
+    background: #0f3460 !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .about-name {
+    color: #e0e0e0 !important;
+}
+
+body.dark .about-desc {
+    color: #a0a0c0 !important;
+}
+
+body.dark .about-highlights li {
+    background: #0f3460 !important;
+    color: #e0e0e0 !important;
+    border-left-color: #a78bfa !important;
+}
+
+body.dark .about-links a {
+    border-color: #a78bfa !important;
+    color: #a78bfa !important;
+}
+
+body.dark .about-links a:hover {
+    background: #a78bfa !important;
+    color: #1a1a2e !important;
+}
+
+/* Skills */
+body.dark .skills {
+    background: #0f3460 !important;
+}
+
+body.dark .skill-group {
+    background: #16213e !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .skill-group-title {
+    color: #e0e0e0 !important;
+    border-bottom-color: #1e4080 !important;
+}
+
+body.dark .skill-name {
+    color: #e0e0e0 !important;
+}
+
+body.dark .skill-bar {
+    background: #1e4080 !important;
+}
+
+body.dark .skill-fill {
+    background: linear-gradient(90deg, #a78bfa, #818cf8) !important;
+}
+
+/* Features */
+body.dark .features {
+    background: #16213e !important;
+}
+
+body.dark .feature-card {
+    background: #0f3460 !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .feature-card:hover {
+    border-color: #a78bfa !important;
+}
+
+body.dark .feature-title {
+    color: #e0e0e0 !important;
+}
+
+body.dark .feature-desc {
+    color: #a0a0c0 !important;
+}
+
+/* Projects */
+body.dark .projects {
+    background: #0f3460 !important;
+}
+
+body.dark .project-card {
+    background: #16213e !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .project-card:hover {
+    border-color: #a78bfa !important;
+}
+
+body.dark .project-name {
+    color: #818cf8 !important;
+}
+
+body.dark .project-desc {
+    color: #a0a0c0 !important;
+}
+
+body.dark .project-lang {
+    background: #1e4080 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Experience */
+body.dark .experience {
+    background: #16213e !important;
+}
+
+body.dark .timeline {
+    border-color: #1e4080 !important;
+}
+
+body.dark .timeline-dot {
+    background: #a78bfa !important;
+}
+
+body.dark .timeline-content {
+    background: #0f3460 !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .timeline-title {
+    color: #e0e0e0 !important;
+}
+
+body.dark .timeline-company {
+    color: #818cf8 !important;
+}
+
+body.dark .timeline-desc {
+    color: #a0a0c0 !important;
+}
+
+body.dark .timeline-tag {
+    background: #1e4080 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Education */
+body.dark .education {
+    background: #0f3460 !important;
+}
+
+body.dark .edu-card {
+    background: #16213e !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .edu-school {
+    color: #e0e0e0 !important;
+}
+
+body.dark .edu-major {
+    color: #818cf8 !important;
+}
+
+body.dark .edu-desc {
+    color: #a0a0c0 !important;
+}
+
+/* Section chung */
+body.dark .section-title {
+    color: #e0e0e0 !important;
+}
+
+body.dark .section-subtitle {
+    color: #a0a0c0 !important;
+}
+
+/* Footer */
+body.dark .footer {
+    background: #16213e !important;
+    border-top-color: #1e4080 !important;
+}
+
+body.dark .footer-name {
+    color: #e0e0e0 !important;
+}
+
+body.dark .footer-copy {
+    color: #a0a0c0 !important;
+}
+
+/* ===== CALCULATOR DARK MODE ===== */
+body.dark .calc-page {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%) !important;
+}
+
+body.dark .calculator {
+    background: #16213e !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .calc-title {
+    color: #a78bfa !important;
+}
+
+body.dark .calc-display {
+    background: #0a0a1a !important;
+}
+
+body.dark .calc-number {
+    color: #e0e0e0 !important;
+}
+
+body.dark .calc-expression {
+    color: #a0a0c0 !important;
+}
+
+body.dark .btn-number {
+    background: #1e4080 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark .btn-number:hover {
+    background: #2a5298 !important;
+}
+
+body.dark .btn-clear {
+    background: #7c3aed !important;
+    color: #fff !important;
+}
+
+body.dark .btn-operator {
+    background: #a78bfa !important;
+    color: #1a1a2e !important;
+}
+
+body.dark .btn-equal {
+    background: #818cf8 !important;
+    color: #1a1a2e !important;
 }

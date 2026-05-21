@@ -4,8 +4,8 @@
     justify-content: space-between;
     padding: 0 2rem;
     height: 64px;
-    background: #FAF9F6;
-    border-bottom: 1px solid #DDD9CE;
+    background: #faf9f6;
+    border-bottom: 1px solid #ddd9ce;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -14,7 +14,7 @@
 .navbar-brand {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #2C2C2A;
+    color: #2c2c2a;
 }
 
 .navbar-menu {
@@ -26,7 +26,7 @@
 }
 
 .navbar-menu a {
-    color: #6B6A65;
+    color: #6b6a65;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
@@ -37,8 +37,26 @@
 
 .navbar-menu a:hover,
 .navbar-menu a.active {
-    color: #8C7863;
-    border-bottom-color: #8C7863;
+    color: #8c7863;
+    border-bottom-color: #8c7863;
+}
+
+/*Css của nút đổi Theme sáng tối*/
+.theme-toggle {
+    background: transparent;
+    border: 1.5px solid #8c7863;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    ;
+    color: #8c7863;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.theme-toggle:hover {
+    background: #8c7863;
 }
 
 @media (max-width: 600px) {

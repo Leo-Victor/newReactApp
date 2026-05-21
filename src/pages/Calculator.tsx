@@ -47,7 +47,6 @@ import type { Operator } from '../feartures/Calculator/calculator.logic';
 //     const handleEqual = () => {
 //         if (firstNum === null || operator === null) return;
 
-
 //         // currentDisplay = số thứ 2 THẬT SỰ đang hiển thị
 //         const second = parseFloat(display);
 //         let result = 0;
@@ -106,11 +105,8 @@ function Calculator() {
         handleBackspace,
     } = useCalculator();
 
-    const expression = state.firstNum !== null
-        ? `${state.firstNum} ${state.operator}`
-        : '';
-
-
+    const expression =
+        state.firstNum !== null ? `${state.firstNum} ${state.operator}` : '';
 
     return (
         // <div className="calc-page">
@@ -144,7 +140,6 @@ function Calculator() {
         //             <button onClick={() => handleNumber('6')} className='btn btn-number'>6</button>
         //             <button onClick={() => handleOperator('-')} className="btn btn-operator">-</button>
 
-
         //             {/* Hàng 4 */}
         //             <button onClick={() => handleNumber('1')} className="btn btn-number">1</button>
         //             <button onClick={() => handleNumber('2')} className="btn btn-number">2</button>
@@ -159,36 +154,70 @@ function Calculator() {
         //     </div>
         // </div>
 
-        <div className='calc-page'>
-            <div className='calculator'>
-                <h2 className='calc-tilte'> Máy tính cầm tay 🧮</h2>
+        <div className="calc-page">
+            <div className="calculator">
+                <h2 className="calc-tilte"> Máy tính cầm tay 🧮</h2>
 
-                <CalculatorDisplay
-                    display={state.display}
-                    expression={expression}
-                />
-                <div className='calc-buttons'>
-                    <CalculatorButton label="AC" variant='action' span onClick={handleClear} />
-                    <CalculatorButton label="⌫" variant='action' onClick={handleBackspace} />
-                    <CalculatorButton label="÷" value='/' variant='operator' onClick={(v) => handleOperator(v as Operator)} />
+                <CalculatorDisplay display={state.display} expression={expression} />
+                <div className="calc-buttons">
+                    <CalculatorButton
+                        label="AC"
+                        variant="action"
+                        span
+                        onClick={handleClear}
+                    />
+                    <CalculatorButton
+                        label="⌫"
+                        variant="action"
+                        onClick={handleBackspace}
+                    />
+                    <CalculatorButton
+                        label="÷"
+                        value="/"
+                        variant="operator"
+                        onClick={(v) => handleOperator(v as Operator)}
+                    />
 
                     <CalculatorButton label="7" variant="number" onClick={handleNumber} />
-                    <CalculatorButton label="8" variant='number' onClick={handleNumber} />
-                    <CalculatorButton label="9" variant='number' onClick={handleNumber} />
-                    <CalculatorButton label="x" value='*' variant='operator' onClick={(v) => handleOperator(v as Operator)} />
+                    <CalculatorButton label="8" variant="number" onClick={handleNumber} />
+                    <CalculatorButton label="9" variant="number" onClick={handleNumber} />
+                    <CalculatorButton
+                        label="x"
+                        value="*"
+                        variant="operator"
+                        onClick={(v) => handleOperator(v as Operator)}
+                    />
 
                     <CalculatorButton label="4" variant="number" onClick={handleNumber} />
-                    <CalculatorButton label="5" variant='number' onClick={handleNumber} />
-                    <CalculatorButton label="6" variant='number' onClick={handleNumber} />
-                    <CalculatorButton label="-" value='-' variant='operator' onClick={(v) => handleOperator(v as Operator)} />
+                    <CalculatorButton label="5" variant="number" onClick={handleNumber} />
+                    <CalculatorButton label="6" variant="number" onClick={handleNumber} />
+                    <CalculatorButton
+                        label="-"
+                        value="-"
+                        variant="operator"
+                        onClick={(v) => handleOperator(v as Operator)}
+                    />
 
                     <CalculatorButton label="1" variant="number" onClick={handleNumber} />
                     <CalculatorButton label="2" variant="number" onClick={handleNumber} />
                     <CalculatorButton label="3" variant="number" onClick={handleNumber} />
-                    <CalculatorButton label="+" variant="operator" onClick={(v) => handleOperator(v as Operator)} />
+                    <CalculatorButton
+                        label="+"
+                        variant="operator"
+                        onClick={(v) => handleOperator(v as Operator)}
+                    />
 
-                    <CalculatorButton label="0" variant="number" span onClick={handleNumber} />
-                    <CalculatorButton label="." variant="number" onClick={handleDecimal} />
+                    <CalculatorButton
+                        label="0"
+                        variant="number"
+                        span
+                        onClick={handleNumber}
+                    />
+                    <CalculatorButton
+                        label="."
+                        variant="number"
+                        onClick={handleDecimal}
+                    />
                     <CalculatorButton label="=" variant="equal" onClick={handleEqual} />
                 </div>
             </div>
