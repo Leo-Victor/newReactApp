@@ -12,9 +12,23 @@
 }
 
 .navbar-brand {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #2c2c2a;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    /* Cho phép bọc hết chiều cao của navbar */
+    /* Đẩy toàn bộ cụm logo cách mép trái ra một khoảng */
+    margin-left: 2.5rem;
+    /* Bạn có thể tăng lên 2rem hoặc hơn nếu muốn dịch vào thêm */
+}
+
+/* Thêm đoạn này để chỉnh trực tiếp cho thẻ img bên trong */
+.navbar-brand img {
+    height: 60px;
+    /* Giới hạn chiều cao logo (navbar của bạn cao 64px nên 45px là vừa đẹp) */
+    width: auto;
+    /* Tự động tính chiều rộng theo tỷ lệ ảnh để không bị méo */
+    object-fit: contain;
+    display: block;
 }
 
 .navbar-menu {
