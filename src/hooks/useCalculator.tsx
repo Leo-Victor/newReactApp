@@ -2,90 +2,130 @@
 import { useState } from 'react';
 import {
   type Operator,
-  type CalculatorState,
-  initialState,
   calculate,
 } from '../feartures/Calculator/calculator.logic';
 
+// Trạng thái được đơn giản hóa để xây dựng một chuỗi biểu thức
+interface ExpressionState {
+  display: string;
+  expression: string; // Thêm trạng thái lưu phép tính để đẩy lên dòng trên
+  isResult: boolean; // Cờ để kiểm tra xem màn hình có đang hiển thị kết quả không
+}
+
+const initialState: ExpressionState = {
+  display: '0',
+  expression: '',
+  isResult: false,
+};
+
+// Hàm để tính toán biểu thức từ trái qua phải
+const evaluate = (expression: string): number => {
+  // Thay thế các toán tử hiển thị (UI) bằng các toán tử logic của JavaScript
+  const sanitizedExpression = expression.replace(/×/g, '*').replace(/÷/g, '/');
+  const tokens = sanitizedExpression.split(' ').filter(token => token !== '');
+
+  if (tokens.length === 0) return 0;
+  if (tokens.length === 1) return parseFloat(tokens[0]);
+
+  // Xử lý trường hợp có toán tử ở cuối (ví dụ: "5 + ")
+  if (['+', '-', '*', '/'].includes(tokens[tokens.length - 1])) {
+    tokens.pop();
+  }
+
+  let result = parseFloat(tokens[0]);
+  for (let i = 1; i < tokens.length; i += 2) {
+    const operator = tokens[i] as Operator;
+    const nextNum = parseFloat(tokens[i + 1]);
+
+    if (isNaN(nextNum)) continue;
+
+    // Sử dụng lại hàm calculate đã có
+    result = calculate(result, nextNum, operator);
+  }
+
+  return result;
+};
+
 function useCalculator() {
-  const [state, setState] = useState<CalculatorState>(initialState);
+  const [state, setState] = useState<ExpressionState>(initialState);
   const [history, setHistory] = useState<string[]>([]);
 
   const handleNumber = (num: string) => {
     setState((prev) => {
-      // Fix : Sau khi bấm = xong, bấm số mới → bắt đầu phép tính mới
-      if (prev.waitingForSecond) {
-        return { ...prev, display: num, waitingForSecond: false };
+      // Nếu đang hiển thị kết quả, bấm số mới sẽ xóa dòng trên và bắt đầu mới hoàn toàn
+      if (prev.isResult) {
+        return { display: num, expression: '', isResult: false };
       }
-      return {
-        ...prev,
-        display: prev.display === '0' ? num : prev.display + num,
-      };
+      // Nếu màn hình đang là '0' thì thay thế
+      if (prev.display === '0') {
+        return { ...prev, display: num, isResult: false };
+      }
+      // Ngược lại, nối vào biểu thức hiện tại
+      return { ...prev, display: prev.display + num };
     });
   };
 
   const handleOperator = (op: Operator) => {
     setState((prev) => {
-      // Fix 3: Nếu đang có phép tính dở (có firstNum + operator)
-      // thì tính kết quả trước rồi mới gán operator mới
-      if (prev.firstNum !== null && prev.operator !== null && !prev.waitingForSecond) {
-        const result = calculate(prev.firstNum, parseFloat(prev.display), prev.operator);
-        return {
-          display: String(result),
-          firstNum: result,
-          operator: op,
-          waitingForSecond: true,
-        };
-      } else {
-        return {
-          ...prev,
-          firstNum: parseFloat(prev.display),
-          operator: op,
-          waitingForSecond: true,
-        }
+      if (prev.display === 'Infinity' || prev.display === 'NaN' || prev.display === 'Error') {
+        return { display: '0', expression: '', isResult: false };
       }
-    })
+      const trimmedDisplay = prev.display.trim();
+      const lastChar = trimmedDisplay.slice(-1);
+
+      // Sử dụng × và ÷ để hiển thị theo README, nhưng logic dùng * và /
+      const displayOp = op === '*' ? '×' : op === '/' ? '÷' : op;
+
+      // Nếu vừa tính xong, bấm phép tính sẽ nối kết quả vào để tính tiếp, đồng thời xóa dòng trên
+      if (prev.isResult) {
+        return { display: `${trimmedDisplay} ${displayOp} `, expression: '', isResult: false };
+      }
+
+      // Thay thế toán tử cuối cùng nếu có
+      if (['+', '-', '×', '÷'].includes(lastChar)) {
+        const newDisplay = trimmedDisplay.slice(0, -1) + displayOp;
+        return { ...prev, display: `${newDisplay} ` };
+      }
+
+      // Nối toán tử vào với khoảng trắng để dễ phân tích
+      return { ...prev, display: `${trimmedDisplay} ${displayOp} `, isResult: false };
+    });
   };
 
   const handleEqual = () => {
     setState((prev) => {
-      if (prev.firstNum === null || prev.operator === null) return prev;
+      if (prev.isResult) return prev;
 
-      const second = parseFloat(prev.display);
-      let result = calculate(
-        prev.firstNum,
-        parseFloat(prev.display),
-        prev.operator
-      );
-      //Fix 2: Giới hạn 9 số thập phân
-      const formatted = parseFloat(result.toFixed(9));
-      //Fix 4: Chia cho 0 → Infinity
-      if (prev.operator === '/' && second === 0) {
-        const expr = `${prev.firstNum} ${prev.operator} ${second}= infinity`;
+      const expression = prev.display;
+      const result = evaluate(expression);
+
+      // Xử lý chia cho 0
+      if (!isFinite(result)) {
+        const expr = `${expression} = ${String(result)}`;
         setHistory((h) => [expr, ...h].slice(0, 10));
-        return {
-          display: String(result),
-          firstNum: null,
-          operator: null,
-          waitingForSecond: false,
-        };
+        return { display: String(result), expression: `${expression} =`, isResult: true };
       }
 
-      const expr = `${prev.firstNum} ${prev.operator} ${second}= ${formatted}`;
+      // Giới hạn 9 số thập phân
+      const formattedResult = parseFloat(result.toFixed(9));
+      const expr = `${expression} = ${formattedResult}`;
       setHistory((h) => [expr, ...h].slice(0, 10));
 
-      return {
-        display: String(formatted),
-        firstNum: null,
-        operator: null,
-        waitingForSecond: true //Fix 1: bấm số tiếp → bắt đầu phép mới
-      }
+      return { display: String(formattedResult), expression: `${expression} =`, isResult: true };
     });
   };
 
   const handleDecimal = () => {
     setState((prev) => {
-      if (prev.display.includes('.')) return prev;
+      if (prev.isResult) {
+        return { display: '0.', expression: '', isResult: false };
+      }
+      // Kiểm tra xem phần số cuối cùng đã có dấu thập phân chưa
+      const parts = prev.display.split(' ');
+      const lastPart = parts[parts.length - 1];
+      if (lastPart.includes('.')) {
+        return prev;
+      }
       return { ...prev, display: prev.display + '.' };
     });
   };
@@ -93,14 +133,20 @@ function useCalculator() {
   const handleClear = () => setState(initialState);
 
   const handleBackspace = () => {
-    setState((prev) => ({
-      ...prev,
-      display: prev.display.length > 1 ? prev.display.slice(0, -1) : '0',
-    }));
+    setState((prev) => {
+      if (prev.isResult) return initialState;
+      const newDisplay = prev.display.trim().slice(0, -1).trim();
+      return { ...prev, display: newDisplay.length === 0 ? '0' : newDisplay };
+    });
   };
 
   return {
-    state,
+    // Đánh lừa giao diện cũ bằng cách cung cấp lại firstNum và operator
+    state: {
+      display: state.display,
+      firstNum: state.expression || null, // Tránh lỗi "undefined undefined"
+      operator: ''
+    } as any,
     history,
     handleNumber,
     handleOperator,
