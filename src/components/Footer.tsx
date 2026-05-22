@@ -4,18 +4,18 @@ function Footer() {
   return (
     <footer className="footer" id="contact">
       <div className="footer-content">
-        <p className="footer-name">Nguyễn Văn A</p>
+        <p className="footer-name">Lê Đăng Khoa</p>
         <p className="footer-role">Frontend Developer</p>
         <div className="footer-links">
           <a
-            href="https://github.com"
+            href="https://github.com/Leo-Victor"
             target="_blank"
             rel="noopener noreferrer"
           >
             GitHub
           </a>
           <span>·</span>
-          <a href="mailto:email@example.com">Email</a>
+          <a href="mailto:khoaledang301@gmail.com">Email</a>
           <span>·</span>
           <a
             href="https://linkedin.com"
