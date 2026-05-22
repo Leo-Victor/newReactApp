@@ -1,7 +1,7 @@
 // dữ liệu profile
 
 export const profile = {
-    name: 'Nguyễn Văn A',
+    name: 'Lê Đăng Khoa',
     role: 'Frontend Developer',
     tagline: 'Sinh Viên CNTT đam mê xây dựng giao diện web đẹp và trải nghiệp người dùng tốt.',
     location: 'Quy Nhơn, Bình Đinh cũ',
@@ -81,9 +81,9 @@ export interface Education {
 export const educations: Education[] = [
   {
     id: 1,
-    school: 'Đại học ABC',
+    school: 'FPT Polytechnic College',
     major: 'Công nghệ Thông tin',
-    time: '2022 - 2026',
+    time: '2024 - 2026',
     gpa: '3.2/4.0',
     description:
       'Chuyên ngành Kỹ thuật Phần mềm. Các môn học nổi bật: Lập trình Web, Cơ sở dữ liệu, Cấu trúc dữ liệu, Phát triển ứng dụng di động.',
