@@ -21,7 +21,7 @@ function AboutSection() {
                         <p className='about-role'>{profile.role}</p>
                         <p className='about-location'>📍 {profile.location} </p>
                         <div className='about-links'>
-                            <a href={profile.githup} target='_blank' rel="noopener noreferre">
+                            <a href={profile.github} target="_blank" rel="noopener noreferrer">
                                 Githup
                             </a>
                             <a href={profile.linkedin} target='_blank' rel="noopener noreferre">

@@ -7,302 +7,13 @@
   padding: 2rem 1rem;
 }
 
-.calculator {
-  background: #faf9f6;
-  border-radius: 24px;
-  padding: 1.5rem;
-  width: 100%;
-  max-width: 340px;
-  box-shadow: 0 20px 60px rgba(44, 44, 42, 0.12);
-  border: 1px solid #ddd9ce;
-}
-
-.calc-title {
-  color: #8c7863;
-  text-align: center;
-  font-size: 1rem;
-  margin: 0 0 1rem;
-  font-weight: 600;
-}
-
-.calc-display {
-  background: #2b2a26;
-  border-radius: 12px;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.calc-expression {
-  font-size: 0.85rem;
-  color: #6b6a65;
-  margin-bottom: 4px;
-  min-height: 20px;
-}
-
-.calc-number {
-  font-size: 2.2rem;
-  font-weight: 300;
-  color: #faf9f6;
-  word-break: break-all;
-}
-
-.calc-buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.btn {
-  border: none;
-  border-radius: 12px;
-  padding: 1.1rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.15s;
-  font-weight: 500;
-  font-family: 'Be Vietnam Pro', sans-serif;
-}
-
-.btn:active {
-  transform: scale(0.93);
-}
-
-.btn-number {
-  background: #e8e5dc;
-  color: #2c2c2a;
-}
-
-.btn-number:hover {
-  background: #ddd9ce;
-}
-
-.btn-operator {
-  background: #8c7863;
-  color: #faf9f6;
-}
-
-.btn-operator:hover {
-  background: #7a6854;
-}
-
-.btn-clear {
-  background: #4a6b82;
-  color: #faf9f6;
-}
-
-.btn-clear:hover {
-  background: #3d5a6e;
-}
-
-.btn-equal {
-  background: #2c2c2a;
-  color: #faf9f6;
-}
-
-.btn-equal:hover {
-  background: #3d3b36;
-}
-
-.span-two {
-  grid-column: span 2;
-}
-
-/* Responsive */
-@media (max-width: 400px) {
-  .calculator {
-    padding: 1rem;
-  }
-
-  .btn {
-    padding: 0.9rem;
-    font-size: 1rem;
-  }
-
-  .calc-number {
-    font-size: 1.8rem;
-  }
-}
-
-.calc-page {
-  min-height: calc(100vh - 64px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #f0eee9 0%, #e5eaef 100%);
-  padding: 1rem;
-}
-
-.calculator {
-  background: #faf9f6;
-  border-radius: 24px;
-  padding: 1.5rem;
-  width: 100%;
-  max-width: 340px;
-  box-shadow: 0 20px 60px rgba(44, 44, 42, 0.12);
-  border: 1px solid #ddd9ce;
-}
-
-.calc-title {
-  color: #8c7863;
-  text-align: center;
-  font-size: 1rem;
-  margin: 0 0 1rem;
-  font-weight: 600;
-}
-
-.calc-display {
-  background: #2b2a26;
-  border-radius: 12px;
-  padding: 1rem 1.2rem;
-  margin-bottom: 1rem;
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.calc-expression {
-  font-size: 0.85rem;
-  color: #6b6a65;
-  margin-bottom: 4px;
-  min-height: 20px;
-}
-
-.calc-number {
-  font-size: 2.2rem;
-  font-weight: 300;
-  color: #faf9f6;
-  word-break: break-all;
-}
-
-.calc-buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.btn {
-  border: none;
-  border-radius: 12px;
-  padding: 1.1rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.15s;
-  font-weight: 500;
-  font-family: 'Be Vietnam Pro', sans-serif;
-}
-
-.btn:active {
-  transform: scale(0.93);
-}
-
-.btn-number {
-  background: #e8e5dc;
-  color: #2c2c2a;
-}
-
-.btn-number:hover {
-  background: #ddd9ce;
-}
-
-.btn-operator {
-  background: #8c7863;
-  color: #faf9f6;
-}
-
-.btn-operator:hover {
-  background: #7a6854;
-}
-
-.btn-clear {
-  background: #4a6b82;
-  color: #faf9f6;
-}
-
-.btn-clear:hover {
-  background: #3d5a6e;
-}
-
-.btn-equal {
-  background: #2c2c2a;
-  color: #faf9f6;
-}
-
-.btn-equal:hover {
-  background: #3d3b36;
-}
-
-.span-two {
-  grid-column: span 2;
-}
-
-/* Responsive */
-@media (max-width: 400px) {
-  .calculator {
-    padding: 1rem;
-  }
-
-  .btn {
-    padding: 0.9rem;
-    font-size: 1rem;
-  }
-
-  .calc-number {
-    font-size: 1.8rem;
-  }
-}
-
-/* HISTORY */
-
-
 .calc-wrapper {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  max-width: 720px;
-  /* Căn giữa máy tính bằng cách đẩy history ra trái */
-  position: relative;
-  ;
-}
-
-.calc-history {
-  background: #faf9f6;
-  border-radius: 16px;
-  padding: 1.2rem;
-  width: 200px;
-  flex-shrink: 0;
-  border: 1px solid #ddd9ce;
-  max-height: 420px;
-  overflow-y: auto;
-}
-
-
-.calc-history-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #8c7863;
-  margin: 0 0 10px;
-  text-align: center;
-  border-bottom: 1px solid #ddd9ce;
-  padding-bottom: 8px;
-}
-
-.calc-history-item {
-  font-size: 0.8rem;
-  color: #6b6a65;
-  margin: 0 0 6px;
-  text-align: right;
-  font-family: var(--font-mono, monospace);
-  padding: 4px 0;
-  border-bottom: 0.5px solid #e8e5dc;
+  max-width: 780px;
 }
 
 .calculator {
@@ -310,54 +21,438 @@
   border-radius: 24px;
   padding: 1.5rem;
   width: 100%;
-  max-width: 340px;
-  box-shadow: 0 20px 60px rgba(44, 44, 42, 0.12);
-  border: 1px solid #ddd9ce;
-  /* Luôn ở giữa dù có hay không có history */
+  max-width: 360px;
   flex-shrink: 0;
+  border: 1px solid #ddd9ce;
+  box-shadow: 0 20px 60px rgba(44, 44, 42, 0.12);
+}
+
+.calc-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.calc-title {
+  color: #8c7863;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.calc-mode-toggle {
+  border: 1px solid #ddd9ce;
+  border-radius: 999px;
+  background: #f0eee9;
+  color: #6b6a65;
+  cursor: pointer;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.55rem 0.75rem;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    transform 0.12s,
+    box-shadow 0.12s;
+  white-space: nowrap;
+}
+
+.calc-mode-toggle:hover,
+.calc-mode-toggle.active {
+  background: #8c7863;
+  border-color: #8c7863;
+  color: #faf9f6;
+}
+
+.calc-mode-toggle:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 2px 5px rgba(44, 44, 42, 0.2);
+}
+
+.calc-display {
+  position: relative;
+  min-height: 92px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #2b2a26;
+  color: #faf9f6;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background 0.2s,
+    transform 0.12s;
+}
+
+.calc-display:hover {
+  background: #23221f;
+}
+
+.calc-display:active {
+  transform: scale(0.99);
+}
+
+.calc-display.copied {
+  background: #1f513d;
+}
+
+.calc-expression {
+  width: 100%;
+  color: #faf9f6;
+  font-size: clamp(1.8rem, 9vw, 2.45rem);
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: right;
+  word-break: break-word;
+}
+
+.calc-copied-toast {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #1d9e75;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.calc-advanced-panel {
+  max-height: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 0.28s ease,
+    margin-bottom 0.28s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.calc-advanced-panel.expanded {
+  max-height: 150px;
+  margin-bottom: 10px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.calc-buttons-advanced {
+  padding: 10px;
+  border: 1px solid #ddd9ce;
+  border-radius: 16px;
+  background: #f0eee9;
+}
+
+.btn {
+  min-width: 0;
+  min-height: 54px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.95rem;
+  transition:
+    transform 0.08s,
+    background 0.15s,
+    box-shadow 0.08s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 2px 8px rgba(44, 44, 42, 0.22);
+}
+
+.btn-number {
+  background: #e8e5dc;
+  color: #2c2c2a;
+}
+
+.btn-number:hover {
+  background: #ddd9ce;
+}
+
+.btn-operator {
+  background: #8c7863;
+  color: #faf9f6;
+}
+
+.btn-operator:hover {
+  background: #7a6854;
+}
+
+.btn-action {
+  background: #d8d2c5;
+  color: #2c2c2a;
+  font-size: 0.92rem;
+}
+
+.btn-action:hover {
+  background: #cbc3b4;
+}
+
+.btn-equal {
+  background: #2c2c2a;
+  color: #faf9f6;
+}
+
+.btn-equal:hover {
+  background: #3d3b36;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.calc-history {
+  width: 240px;
+  max-height: 480px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid #ddd9ce;
+  border-radius: 18px;
+  background: #faf9f6;
+}
+
+.calc-history-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd9ce;
+}
+
+.calc-history-title {
+  color: #8c7863;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.calc-history-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.calc-history-export,
+.calc-history-clear {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.45rem 0.6rem;
+  transition:
+    transform 0.08s,
+    background 0.15s,
+    box-shadow 0.08s;
+}
+
+.calc-history-export {
+  background: #4a6b82;
+  color: #faf9f6;
+}
+
+.calc-history-clear {
+  background: #ffeaea;
+  color: #e24b4a;
+}
+
+.calc-history-export:active,
+.calc-history-clear:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 2px 8px rgba(44, 44, 42, 0.16);
+}
+
+.calc-history-list {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 0.35rem 1rem 1rem;
+}
+
+.calc-history-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #e8e5dc;
 }
 
 .calc-history-item:last-child {
   border-bottom: none;
 }
 
-/* Khi KHÔNG có history — máy tính vẫn giữa */
-.calc-wrapper:has(.calculator:only-child) {
-  justify-content: center;
+.calc-history-content {
+  flex: 1;
+  min-width: 0;
+  text-align: right;
 }
 
+.calc-history-expr,
+.calc-history-result {
+  display: block;
+  overflow-wrap: anywhere;
+}
 
-/* Dark mode history */
+.calc-history-expr {
+  color: #8b8880;
+  font-size: 0.74rem;
+  font-family: var(--font-mono, monospace);
+}
+
+.calc-history-result {
+  color: #2c2c2a;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.calc-history-delete {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #aaa49a;
+  cursor: pointer;
+  font-size: 16px;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    transform 0.08s;
+}
+
+.calc-history-delete:hover {
+  background: #ffeaea;
+  color: #e24b4a;
+}
+
+.calc-history-delete:active {
+  transform: scale(0.9);
+}
+
+body.dark .calculator,
 body.dark .calc-history {
   background: #16213e !important;
   border-color: #1e4080 !important;
 }
 
+body.dark .calc-title,
 body.dark .calc-history-title {
   color: #a78bfa !important;
-  border-color: #1e4080 !important;
 }
 
+body.dark .calc-buttons-advanced,
+body.dark .calc-mode-toggle {
+  background: #1e2d4d !important;
+  border-color: #1e4080 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark .calc-mode-toggle.active,
+body.dark .calc-mode-toggle:hover {
+  background: #a78bfa !important;
+  border-color: #a78bfa !important;
+  color: #111827 !important;
+}
+
+body.dark .btn-number,
+body.dark .btn-action {
+  background: #2a3a5c !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark .btn-operator {
+  background: #6d5dfc !important;
+}
+
+body.dark .btn-equal {
+  background: #0f172a !important;
+}
+
+body.dark .calc-history-header,
 body.dark .calc-history-item {
-  color: #a0a0c0 !important;
   border-color: #1e4080 !important;
 }
 
-/* Responsive mobile */
-@media (max-width: 650px) {
+body.dark .calc-history-expr {
+  color: #a0a0c0 !important;
+}
+
+body.dark .calc-history-result {
+  color: #e0e0e0 !important;
+}
+
+@media (max-width: 720px) {
+  .calc-page {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
   .calc-wrapper {
     flex-direction: column;
     align-items: center;
   }
 
+  .calculator,
   .calc-history {
     width: 100%;
-    max-width: 340px;
-    order: 2;
-    /* history xuống dưới máy tính */
+    max-width: 380px;
   }
 
   .calculator {
     order: 1;
+  }
+
+  .calc-history {
+    order: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    padding: 1rem;
+  }
+
+  .calc-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .calc-mode-toggle {
+    width: 100%;
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 0.8rem;
+    font-size: 0.98rem;
   }
 }

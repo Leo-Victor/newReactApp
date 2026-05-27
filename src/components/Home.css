@@ -493,10 +493,13 @@
 .project-card {
     background: #faf9f6;
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 1rem;
     border: 1px solid #ddd9ce;
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
     transition:
         transform 0.2s,
         box-shadow 0.2s;
@@ -511,13 +514,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin: 1rem 0 8px;
 }
 
 .project-name {
     color: #4a6b82;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.project-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #e8e5dc;
 }
 
 .project-stars {
@@ -530,6 +544,7 @@
     font-size: 0.875rem;
     line-height: 1.5;
     margin: 0 0 12px;
+    min-height: 4rem;
 }
 
 .project-lang {
@@ -539,6 +554,99 @@
     background: #e8e5dc;
     color: #2c2c2a;
     font-weight: 500;
+}
+
+.project-tags,
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tags {
+    margin-bottom: 1rem;
+}
+
+.project-actions {
+    margin-top: auto;
+    padding-top: 0.25rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #8c7863;
+    border-radius: 8px;
+    color: #8c7863;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+    min-height: 34px;
+    padding: 0.55rem 0.8rem;
+    text-decoration: none;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.12s,
+        box-shadow 0.12s;
+}
+
+.project-link:hover {
+    background: #8c786310;
+    transform: translateY(-1px);
+}
+
+.project-link:active {
+    transform: scale(0.96);
+    box-shadow: inset 0 2px 6px rgba(44, 44, 42, 0.16);
+}
+
+.project-link-primary {
+    background: #8c7863;
+    color: #faf9f6;
+}
+
+.project-link-primary:hover {
+    background: #7a6854;
+}
+
+.project-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: -1.5rem 0 2rem;
+}
+
+.project-filter-chip {
+    border: 1px solid #ddd9ce;
+    border-radius: 999px;
+    background: #faf9f6;
+    color: #6b6a65;
+    cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.55rem 1rem;
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        color 0.2s,
+        transform 0.12s,
+        box-shadow 0.12s;
+}
+
+.project-filter-chip:hover,
+.project-filter-chip.active {
+    background: #8c7863;
+    border-color: #8c7863;
+    color: #faf9f6;
+}
+
+.project-filter-chip:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 2px 6px rgba(44, 44, 42, 0.18);
 }
 
 .state-box {
@@ -942,6 +1050,129 @@
     margin: 0;
 }
 
+/* ===== CONTACT ===== */
+.contact {
+    padding: 5rem 1.5rem;
+    background: #faf9f6;
+}
+
+.contact-cta {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-cta-eyebrow {
+    color: #8c7863;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+}
+
+.contact-cta .section-subtitle {
+    margin-bottom: 1.5rem;
+}
+
+.contact-cta-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.contact-form {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 1px solid #ddd9ce;
+    border-radius: 16px;
+    background: #f0eee9;
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+}
+
+.contact-field span {
+    color: #2c2c2a;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd9ce;
+    border-radius: 10px;
+    background: #faf9f6;
+    color: #2c2c2a;
+    font: inherit;
+    padding: 0.8rem 0.9rem;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+}
+
+.contact-field textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    outline: none;
+    border-color: #4a6b82;
+    box-shadow: 0 0 0 3px rgba(74, 107, 130, 0.14);
+}
+
+.contact-field input[aria-invalid='true'],
+.contact-field textarea[aria-invalid='true'] {
+    border-color: #e24b4a;
+}
+
+.contact-error {
+    color: #c0392b;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.contact-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.contact-success {
+    color: #1d7d61;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.contact-actions .btn-primary:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
 /* Feature skill bar */
 .feature-level {
     display: flex;
@@ -1001,8 +1232,28 @@ body.dark .feature-percent {
     }
 
     .features,
-    .projects {
+    .projects,
+    .contact {
         padding: 3rem 1rem;
+    }
+
+    .project-filter {
+        justify-content: flex-start;
+        margin-top: -1rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .contact-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-actions {
+        align-items: stretch;
+        flex-direction: column;
     }
 }
 

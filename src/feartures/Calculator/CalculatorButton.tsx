@@ -1,27 +1,27 @@
-// Interface cho props
-type ButtonVariant = 'number' | 'operator' | 'action' | 'equal';
+import type { CalculatorButtonVariant } from './calculator.config';
 
 interface CalculatorButtonProps {
   label: string;
   value?: string;
-  variant?: ButtonVariant;
-  disbled?: boolean;
-  span?: boolean; // true = chiếm 2 cột
-  onClick: (Value: string) => void;
+  variant?: CalculatorButtonVariant;
+  disabled?: boolean;
+  span?: boolean;
+  onClick: (value: string) => void;
 }
 
 function CalculatorButton({
   label,
-  value = label, //default value = label nếu không truyền
+  value = label,
   variant = 'number',
-  disbled = false,
+  disabled = false,
   span = false,
   onClick,
 }: CalculatorButtonProps) {
   return (
     <button
+      type="button"
       className={`btn btn-${variant} ${span ? 'span-two' : ''}`}
-      disabled={disbled}
+      disabled={disabled}
       onClick={() => onClick(value)}
     >
       {label}
@@ -30,5 +30,3 @@ function CalculatorButton({
 }
 
 export default CalculatorButton;
-
-//

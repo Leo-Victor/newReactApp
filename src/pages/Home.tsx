@@ -6,6 +6,7 @@ import ExperienceSection from '../components/ExperienceSection';
 import EducationSection from '../components/EducationSection';
 import FeaturesSection from '../components/FeaturesSection';
 import ProjectsSection from '../components/ProjectsSection';
+import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
       <ProjectsSection />
       <ExperienceSection />
       <EducationSection />
+      <ContactSection />
       <Footer />
     </main>
   );

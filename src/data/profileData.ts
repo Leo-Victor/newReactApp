@@ -6,7 +6,7 @@ export const profile = {
     tagline: 'Sinh Viên CNTT đam mê xây dựng giao diện web đẹp và trải nghiệp người dùng tốt.',
     location: 'Quy Nhơn, Bình Đinh cũ',
     email: 'khoaledang301@gmail.com',
-    githup:  'https://github.com/Leo-Victor',
+    github:  'https://github.com/Leo-Victor',
     linkedin: 'https://www.linkedin.com/in/leo-victor-319043391/',
     avatar: 'LV',
 };

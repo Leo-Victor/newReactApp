@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
-    /*background: #f0eee9;*/
     color: #2c2c2a;
 }
 
@@ -39,6 +38,10 @@ body.dark .navbar-menu a.active {
 body.dark .theme-toggle {
     border-color: #a78bfa !important;
     color: #a78bfa !important;
+}
+
+body.dark .theme-toggle:hover {
+    background: rgba(167, 139, 250, 0.12) !important;
 }
 
 /* Hero */
@@ -172,6 +175,30 @@ body.dark .project-lang {
     color: #e0e0e0 !important;
 }
 
+body.dark .project-filter-chip {
+    background: #16213e !important;
+    border-color: #1e4080 !important;
+    color: #a0a0c0 !important;
+}
+
+body.dark .project-filter-chip:hover,
+body.dark .project-filter-chip.active {
+    background: #a78bfa !important;
+    border-color: #a78bfa !important;
+    color: #1a1a2e !important;
+}
+
+body.dark .project-link {
+    border-color: #a78bfa !important;
+    color: #a78bfa !important;
+}
+
+body.dark .project-link:hover,
+body.dark .project-link-primary {
+    background: #a78bfa !important;
+    color: #1a1a2e !important;
+}
+
 /* Experience */
 body.dark .experience {
     background: #16213e !important;
@@ -229,6 +256,55 @@ body.dark .edu-desc {
     color: #a0a0c0 !important;
 }
 
+/* Contact */
+body.dark .contact {
+    background: #16213e !important;
+}
+
+body.dark .contact-form {
+    background: #0f3460 !important;
+    border-color: #1e4080 !important;
+}
+
+body.dark .contact-field span {
+    color: #e0e0e0 !important;
+}
+
+body.dark .contact-field input,
+body.dark .contact-field textarea {
+    background: #16213e !important;
+    border-color: #1e4080 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark .contact-field input:focus,
+body.dark .contact-field textarea:focus {
+    border-color: #a78bfa !important;
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.18) !important;
+}
+
+body.dark .contact-field input[aria-invalid='true'],
+body.dark .contact-field textarea[aria-invalid='true'] {
+    border-color: #ff6b8a !important;
+}
+
+body.dark .contact-error {
+    color: #ff6b8a !important;
+}
+
+body.dark .contact-success {
+    color: #7dd3fc !important;
+}
+
+body.dark .contact-cta-eyebrow {
+    color: #a78bfa !important;
+}
+
+body.dark .contact-actions .btn-primary:disabled {
+    background: #31446c !important;
+    color: #a0a0c0 !important;
+}
+
 /* Section chung */
 body.dark .section-title {
     color: #e0e0e0 !important;
@@ -257,12 +333,14 @@ body.dark .calc-page {
     background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%) !important;
 }
 
-body.dark .calculator {
+body.dark .calculator,
+body.dark .calc-history {
     background: #16213e !important;
     border-color: #1e4080 !important;
 }
 
-body.dark .calc-title {
+body.dark .calc-title,
+body.dark .calc-history-title {
     color: #a78bfa !important;
 }
 
@@ -278,12 +356,14 @@ body.dark .calc-expression {
     color: #a0a0c0 !important;
 }
 
-body.dark .btn-number {
+body.dark .btn-number,
+body.dark .btn-action {
     background: #1e4080 !important;
     color: #e0e0e0 !important;
 }
 
-body.dark .btn-number:hover {
+body.dark .btn-number:hover,
+body.dark .btn-action:hover {
     background: #2a5298 !important;
 }
 
@@ -300,4 +380,73 @@ body.dark .btn-operator {
 body.dark .btn-equal {
     background: #818cf8 !important;
     color: #1a1a2e !important;
+}
+
+
+/* ===== GLOBAL ANIMATIONS ===== */
+
+/* Fade in khi scroll vào */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content,
+.about-grid,
+.features-grid,
+.projects-grid,
+.timeline,
+.edu-grid,
+.skills-grid {
+    animation: fadeInUp 0.6s ease both;
+}
+
+/* Delay cho từng section */
+.features-grid {
+    animation-delay: 0.1s;
+}
+
+.projects-grid {
+    animation-delay: 0.15s;
+}
+
+.timeline {
+    animation-delay: 0.1s;
+}
+
+/* Hover lift cho cards */
+.feature-card,
+.project-card,
+.edu-card,
+.timeline-content {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Smooth scroll toàn trang */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Transition khi đổi theme */
+*,
+*::before,
+*::after {
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.2s ease;
+}
+
+/* Không transition transform để không ảnh hưởng animation */
+.btn,
+button,
+.memory-card-inner {
+    transition: transform 0.1s ease, background-color 0.15s, border-color 0.15s !important;
 }
